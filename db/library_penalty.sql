@@ -16,19 +16,14 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `penalty`
+-- Dumping data for table `penalty`
 --
 
-DROP TABLE IF EXISTS `penalty`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `penalty` (
-  `book_id` int NOT NULL,
-  `overdue_fine` double DEFAULT NULL,
-  PRIMARY KEY (`book_id`),
-  CONSTRAINT `fk_penalty_book` FOREIGN KEY (`book_id`) REFERENCES `book` (`book_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
+LOCK TABLES `penalty` WRITE;
+/*!40000 ALTER TABLE `penalty` DISABLE KEYS */;
+INSERT INTO `penalty` VALUES (1,100),(2,200),(3,300);
+/*!40000 ALTER TABLE `penalty` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -39,4 +34,4 @@ CREATE TABLE `penalty` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-10-15 15:52:28
+-- Dump completed on 2022-10-16 12:33:41

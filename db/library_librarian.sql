@@ -16,24 +16,14 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `librarian`
+-- Dumping data for table `librarian`
 --
 
-DROP TABLE IF EXISTS `librarian`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `librarian` (
-  `librarian_id` int NOT NULL,
-  `first_name` varchar(45) DEFAULT NULL,
-  `last_name` varchar(45) DEFAULT NULL,
-  `dob` datetime DEFAULT NULL,
-  `phone_no` varchar(15) DEFAULT NULL,
-  `address_id` int DEFAULT NULL,
-  PRIMARY KEY (`librarian_id`),
-  KEY `fk_librarian_address_idx` (`address_id`),
-  CONSTRAINT `fk_librarian_address` FOREIGN KEY (`address_id`) REFERENCES `address` (`usr_addr_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
+LOCK TABLES `librarian` WRITE;
+/*!40000 ALTER TABLE `librarian` DISABLE KEYS */;
+INSERT INTO `librarian` VALUES (1,'Lakshmi','Narayana','1985-10-15 00:00:00','9876543210',1),(2,'Niju','PJ','1995-12-17 00:00:00','9651472301',2),(3,'Nipun','Navadia','1984-06-07 00:00:00','9321456870',3);
+/*!40000 ALTER TABLE `librarian` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -44,4 +34,4 @@ CREATE TABLE `librarian` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-10-15 15:52:43
+-- Dump completed on 2022-10-16 12:33:15

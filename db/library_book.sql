@@ -16,26 +16,14 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `book`
+-- Dumping data for table `book`
 --
 
-DROP TABLE IF EXISTS `book`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `book` (
-  `book_id` int NOT NULL,
-  `author_id` int DEFAULT NULL,
-  `title` varchar(100) DEFAULT NULL,
-  `published_date` datetime DEFAULT NULL,
-  `total_qty` int DEFAULT NULL,
-  `ISBN` varchar(45) DEFAULT NULL,
-  `genre` varchar(20) DEFAULT NULL,
-  `price` double DEFAULT NULL,
-  PRIMARY KEY (`book_id`),
-  KEY `fk_book_bookauthor_idx` (`author_id`),
-  CONSTRAINT `fk_book_bookauthor` FOREIGN KEY (`author_id`) REFERENCES `book_author` (`author_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
+LOCK TABLES `book` WRITE;
+/*!40000 ALTER TABLE `book` DISABLE KEYS */;
+INSERT INTO `book` VALUES (1,1,'Tale of three cities','1980-10-09 00:00:00',10,'1','drama',1001),(2,2,'1994','1992-12-08 00:00:00',20,'2','fiction',1002),(3,3,'bob in wonderland','2000-07-08 00:00:00',30,'3','fantasy',1003);
+/*!40000 ALTER TABLE `book` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -46,4 +34,4 @@ CREATE TABLE `book` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-10-15 15:52:37
+-- Dump completed on 2022-10-16 12:33:44

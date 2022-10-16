@@ -16,29 +16,14 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `borrow_returns`
+-- Dumping data for table `borrow_returns`
 --
 
-DROP TABLE IF EXISTS `borrow_returns`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `borrow_returns` (
-  `usr_id` int NOT NULL,
-  `book_id` int NOT NULL,
-  `librarian_id` int NOT NULL,
-  `date_issued` datetime DEFAULT NULL,
-  `date_returned` datetime DEFAULT NULL,
-  `expire_date` datetime DEFAULT NULL,
-  `overdue_days` int DEFAULT NULL,
-  `penalty_amt` double DEFAULT NULL,
-  PRIMARY KEY (`usr_id`,`book_id`,`librarian_id`),
-  KEY `fk_borrow_returns_book_idx` (`book_id`),
-  KEY `fk_borrow_returns_librarian_idx` (`librarian_id`),
-  CONSTRAINT `fk_borrow_returns_librarian` FOREIGN KEY (`librarian_id`) REFERENCES `librarian` (`librarian_id`),
-  CONSTRAINT `fk_borrowreturns_book` FOREIGN KEY (`book_id`) REFERENCES `book` (`book_id`),
-  CONSTRAINT `fk_borrowreturns_member` FOREIGN KEY (`usr_id`) REFERENCES `members` (`uid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
+LOCK TABLES `borrow_returns` WRITE;
+/*!40000 ALTER TABLE `borrow_returns` DISABLE KEYS */;
+INSERT INTO `borrow_returns` VALUES (1,1,1,'2005-11-12 00:00:00',NULL,NULL,NULL,NULL),(2,2,2,'2006-05-07 00:00:00',NULL,NULL,NULL,NULL);
+/*!40000 ALTER TABLE `borrow_returns` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -49,4 +34,4 @@ CREATE TABLE `borrow_returns` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-10-15 15:52:50
+-- Dump completed on 2022-10-16 12:33:21
