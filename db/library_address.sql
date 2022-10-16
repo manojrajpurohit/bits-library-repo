@@ -16,14 +16,21 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Dumping data for table `address`
+-- Table structure for table `address`
 --
 
-LOCK TABLES `address` WRITE;
-/*!40000 ALTER TABLE `address` DISABLE KEYS */;
-INSERT INTO `address` VALUES (1,'1','halls road','kilpauk',600001),(2,'2','jerry street','safdarjun',560002),(3,'3','ibrahim street','kanagpura',665703),(4,'4','lulla street','sophian',789904),(5,'5','rama street','bellary',450005),(6,'6','krishna street','puri',360006),(7,'7','anthony street','calangute',120007),(8,'8','central avenue','alllepey',345008),(9,'9','koko street','eden street',650009),(10,'10','notre lane','pondy',250010);
-/*!40000 ALTER TABLE `address` ENABLE KEYS */;
-UNLOCK TABLES;
+DROP TABLE IF EXISTS `address`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `address` (
+  `usr_addr_id` int NOT NULL,
+  `door_no` varchar(10) DEFAULT NULL,
+  `Street` varchar(100) DEFAULT NULL,
+  `area` varchar(45) DEFAULT NULL,
+  `pin_code` int DEFAULT NULL,
+  PRIMARY KEY (`usr_addr_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -34,4 +41,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-10-16 12:33:37
+-- Dump completed on 2022-10-16 12:38:05

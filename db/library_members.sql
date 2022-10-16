@@ -16,14 +16,25 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Dumping data for table `members`
+-- Table structure for table `members`
 --
 
-LOCK TABLES `members` WRITE;
-/*!40000 ALTER TABLE `members` DISABLE KEYS */;
-INSERT INTO `members` VALUES (1,'john','cena','subscriber',5,'9564253142',4),(2,'julk','hogan','subscriber',10,'96523147852',5);
-/*!40000 ALTER TABLE `members` ENABLE KEYS */;
-UNLOCK TABLES;
+DROP TABLE IF EXISTS `members`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `members` (
+  `uid` int NOT NULL,
+  `first_name` varchar(45) DEFAULT NULL,
+  `last_name` varchar(45) DEFAULT NULL,
+  `role` varchar(45) DEFAULT NULL,
+  `book_limit` int DEFAULT NULL,
+  `phone_no` varchar(15) DEFAULT NULL,
+  `address_id` int DEFAULT NULL,
+  PRIMARY KEY (`uid`),
+  KEY `fk_members_address_idx` (`address_id`),
+  CONSTRAINT `fk_members_address` FOREIGN KEY (`address_id`) REFERENCES `address` (`usr_addr_id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -34,4 +45,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-10-16 12:33:34
+-- Dump completed on 2022-10-16 12:38:02

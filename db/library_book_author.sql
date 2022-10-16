@@ -16,14 +16,20 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Dumping data for table `book_author`
+-- Table structure for table `book_author`
 --
 
-LOCK TABLES `book_author` WRITE;
-/*!40000 ALTER TABLE `book_author` DISABLE KEYS */;
-INSERT INTO `book_author` VALUES (1,'manoj','kumar','1970-01-05 00:00:00'),(2,'bhavani','prasad','1975-12-12 00:00:00'),(3,'kalyanram','r','1987-04-30 00:00:00'),(4,'tariq','khan','1992-07-22 00:00:00'),(5,'bhikar','sargam','1977-09-05 00:00:00'),(6,'Narain','A','1987-10-22 00:00:00');
-/*!40000 ALTER TABLE `book_author` ENABLE KEYS */;
-UNLOCK TABLES;
+DROP TABLE IF EXISTS `book_author`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `book_author` (
+  `author_id` int NOT NULL,
+  `first_name` varchar(45) DEFAULT NULL,
+  `last_name` varchar(45) DEFAULT NULL,
+  `dob` datetime DEFAULT NULL,
+  PRIMARY KEY (`author_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -34,4 +40,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-10-16 12:33:31
+-- Dump completed on 2022-10-16 12:37:59
