@@ -5,6 +5,11 @@ from flask import jsonify
 from flask import flash, request
 
 
+@app.route('/')
+def index():
+    return 'Hello, Flask!'
+
+
 @app.route('/add_address', methods=['POST'])
 def create_emp():
     try:
